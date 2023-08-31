@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CT.#####",
+ "creation": "2023-08-30 01:52:11.897008",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "coins_wallet",
+  "section_break_tisjw",
+  "customer",
+  "column_break_lg7zq",
+  "customer_name",
+  "section_break_wwyxd",
+  "transaction_type",
+  "column_break_r3mwf",
+  "transaction_method",
+  "section_break_i6ogo",
+  "transaction_coins",
+  "section_break_dzlmf",
+  "reference_doctype",
+  "column_break_zythc",
+  "reference_docname",
+  "section_break_chybq",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "coins_wallet.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_tisjw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "coins_wallet.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_lg7zq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "coins_wallet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Coins Wallet",
+   "options": "MAA Coins Wallet",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_wwyxd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Transaction Type",
+   "options": "\nDebit\nCredit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_r3mwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaction_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Transaction Method",
+   "options": "\nCredit/Debit by Admin\nRefer&Earn\nSettle in Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_i6ogo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_coins",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Transaction Coins",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_dzlmf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype"
+  },
+  {
+   "fieldname": "column_break_zythc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_docname",
+   "fieldtype": "Data",
+   "label": "Reference DocName"
+  },
+  {
+   "fieldname": "section_break_chybq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Coins Transaction",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-08-30 16:26:10.372954",
+ "modified_by": "Administrator",
+ "module": "Maa",
+ "name": "MAA Coins Transaction",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-08-30 01:59:36.174938",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cashback_percentage",
+  "column_break_uy3jy",
+  "up_front_amount",
+  "section_break_dlvb3",
+  "min_order_value",
+  "column_break_gcoeh",
+  "max_order_value",
+  "column_break_pxsid",
+  "max_coins_to_be_given",
+  "section_break_opfau",
+  "valid_from",
+  "column_break_zwgak",
+  "valid_to"
+ ],
+ "fields": [
+  {
+   "fieldname": "cashback_percentage",
+   "fieldtype": "Percent",
+   "label": "Cashback Percentage"
+  },
+  {
+   "fieldname": "up_front_amount",
+   "fieldtype": "Float",
+   "label": "Up Front Amount"
+  },
+  {
+   "fieldname": "min_order_value",
+   "fieldtype": "Int",
+   "label": "Min Order Value"
+  },
+  {
+   "fieldname": "max_order_value",
+   "fieldtype": "Int",
+   "label": "Max Order Value"
+  },
+  {
+   "fieldname": "max_coins_to_be_given",
+   "fieldtype": "Int",
+   "label": "Max Coins to be Given"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "column_break_uy3jy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_dlvb3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gcoeh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pxsid",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_opfau",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_zwgak",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-08-30 02:01:41.461119",
+ "modified_by": "Administrator",
+ "module": "Maa",
+ "name": "MAA Coins Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

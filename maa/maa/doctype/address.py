@@ -20,4 +20,6 @@ def distance(doc):
     check_distance = frappe.db.get_single_value("MAA Distance Setting", "delivery_distance")
     if distance < check_distance:
         doc.in_range = 1
+    else:
+        doc.in_range = 0
         # doc.save()

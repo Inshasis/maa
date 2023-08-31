@@ -9,8 +9,8 @@ def distance(doc):
     lat2 = 29.451550
     lon2 = 77.316391
 
-    lat1 = doc.latitude
-    lon1 = doc.longitude 
+    lat1 = float(doc.latitude)
+    lon1 = float(doc.longitude)
     r = 6371 # km
     p = pi / 180
 

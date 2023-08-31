@@ -16,8 +16,8 @@ def distance(doc):
     distance = 0.0
     a = 0.5 - cos((lat2-lat1)*p)/2 + cos(lat1*p) * cos(lat2*p) * (1-cos((lon2-lon1)*p))/2
     distance = (2 * r * asin(sqrt(a)))
-
+    doc.in_distance = distance
     check_distance = frappe.db.get_single_value("MAA Distance Setting", "delivery_distance")
     if distance < check_distance:
         doc.in_range = 1
-        doc.save()
+        # doc.save()

@@ -125,7 +125,7 @@ doc_events = {
 #		"on_trash": "method"
 #	}
     "Address": {
-            "validate": "maa.doctype.address.validate"
+            "validate": "maa.maa.doctype.address.validate"
         }
 }
 

@@ -5,7 +5,7 @@ def sort_delivery_order(docname):
     to_sort = []
     cur = frappe.get_doc("Delivery Trip", docname)
     for i in cur.table:
-        to_sort.apppend(i)
+        to_sort.append(i)
 
     frappe.msgprint(str(to_sort))
 

@@ -15,5 +15,3 @@ def sort_delivery_order(docname):
         for d in cur.table:
             if d.distance == a:
                 d.idx = i
-
-    cur.refresh_field("table")

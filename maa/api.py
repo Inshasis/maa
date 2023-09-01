@@ -11,7 +11,7 @@ def sort_delivery_order(docname):
     i = 0
     for a in sorted(to_sort):
         i+=1
-        frappe.msgprint(str(i) + ": : " + a)
+        frappe.msgprint(str(i) + ": : " + str(a))
         for d in cur.table:
             if d.distance == a:
                 d.idx = i

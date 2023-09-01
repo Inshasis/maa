@@ -8,7 +8,8 @@ def sort_delivery_order(docname):
         to_sort.append(i.distance)
 
     # frappe.msgprint(str(sorted(to_sort)))
-
-    for i,a in sorted(to_sort):
+    i = 0
+    for a in sorted(to_sort):
+        i+=1
         frappe.msgprint(i + ": : " + a)
 

@@ -7,7 +7,7 @@ from frappe.model.document import Document
 class MAACoinsTransaction(Document):
 	# pass
 
-	def validate(self):
+	def after_insert(self):
 		if self.transaction_type == 'Credit':
 			coin_wallet = frappe.get_value('MAA Coins Wallet',{'name':self.coins_wallet},'coins')
 			sum_coin = int(coin_wallet) + int(self.transaction_coins) 

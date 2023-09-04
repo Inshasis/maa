@@ -2,6 +2,19 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Customer', {
+    validate: function(frm) {
+       if(!frm.doc.referral_code){
+            var randomnum = Math.random().toString(36).substr(2,6);
+            // frm.set_value("referral_code", ("" + Math.random()).substring(2, 8)); 
+            frm.set_value("referral_code", randomnum);
+        }
+    },
+    onload: function(frm) {
+        if(frm.doc.referral_code){
+            frm.set_df_property('referral_code',"read_only",1);           
+        }
+        
+    },
     refresh: function(frm) {
         if (frappe.session.user == "Administrator") {
 

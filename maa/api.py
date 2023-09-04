@@ -14,6 +14,7 @@ def get_distance_and_sort(doc, method):
         a.distance = resp['rows']['0']['elements']['0']['distance']['text']
         a.estimated_delivery_time = resp['rows']['0']['elements']['0']['duration']['text']
         to_sort.append(a.distance)
+        frappe.msgprint(a.estimated_delivery_time)
     i = 0
     for a in sorted(to_sort):
         i+=1

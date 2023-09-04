@@ -15,7 +15,11 @@ class MAACoinsTransaction(Document):
 			frappe.db.set_value('MAA Coins Wallet', self.coins_wallet, {
 				'coins': str(sum_coin)
 			})
-			frappe.msgprint("Coins Credit Sucessfull {0}".format(self.coins_wallet))
+			# Update Coins in Customer
+			frappe.db.set_value('Customer', self.customer, {
+				'total_coins': str(sum_coin)
+			})
+			# frappe.msgprint("Coins Credit Sucessfull {0}".format(self.coins_wallet))
 		else:
 			coin_wallet = frappe.get_value('MAA Coins Wallet',{'name':self.coins_wallet},'coins')
 			sum_coin = int(coin_wallet) - int(self.transaction_coins) 
@@ -23,4 +27,9 @@ class MAACoinsTransaction(Document):
 			frappe.db.set_value('MAA Coins Wallet', self.coins_wallet, {
 				'coins': str(sum_coin)
 			})
-			frappe.msgprint("Coins Debit Sucessfull {0}".format(self.coins_wallet))
+
+			# Update Coins in Customer
+			frappe.db.set_value('Customer', self.customer, {
+				'total_coins': str(sum_coin)
+			})
+			# frappe.msgprint("Coins Debit Sucessfull {0}".format(self.coins_wallet))

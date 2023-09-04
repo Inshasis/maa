@@ -1,16 +1,16 @@
 import frappe
 import json
+import requests
 
 @frappe.whitelist()
 def get_distance_and_sort(doc, method= None):
-    
     to_sort = []
     #Jethipura Address Log
     latitude = "23.7625575" #29.44671
     longitude = "72.9234269" #77.3515
     for a in doc.table:
         url = "https://api.distancematrix.ai/maps/api/distancematrix/json?origins='" + latitude + "+" + longitude+ "&destinations=" + a.latitude + "+" + a.longitude + "&mode=driving&departure_time=now&key=bUNDH50AQXySHRt6qzMdirw8a8rkl"
-        response = frappe.make_get_request(url)
+        response = requests.request("GET", url)
         resp = json.load(response)
         a.distance = float(resp['rows']['0']['elements']['0']['distance']['text'])
         a.estimated_delivery_time = resp['rows']['0']['elements']['0']['duration']['text']

@@ -126,7 +126,11 @@ doc_events = {
 #	}
     "Address": {
             "validate": "maa.maa.doctype.address.validate"
-        }
+    },
+    "Customer": {
+            "after_insert": "maa.maa.doctype.customer.after_insert"
+    }
+
 }
 
 

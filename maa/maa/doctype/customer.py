@@ -3,7 +3,7 @@
 
 import frappe
 
-def validate(doc,method):
+def after_insert(doc,method):
     maa_coins_wallet = frappe.get_doc({
 		"doctype": "MAA Coins Wallet",
 		"customer": doc.name,

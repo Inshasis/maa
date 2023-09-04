@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Customer', {
     refresh: function(frm) {
-        // if (frappe.user.has_role("Administrator")) {
+        if (frappe.session.user == "Administrator") {
 
                 frm.add_custom_button(__('Transfer Conis'), function() {
                     frappe.prompt([
@@ -55,7 +55,7 @@ frappe.ui.form.on('Customer', {
                 });
                 }).css({ 'background-color': 'darkblue', 'color': 'white' });
            
-        // }
+        }
     }
 });
 

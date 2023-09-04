@@ -2,7 +2,8 @@ import frappe
 import json
 
 @frappe.whitelist()
-def get_distance_and_sort(doc, method):
+def get_distance_and_sort(doc, method= None):
+    frappe.msgprint("Hello")
     to_sort = []
     #Jethipura Address Log
     latitude = "23.7625575" #29.44671

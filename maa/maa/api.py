@@ -26,7 +26,7 @@ import requests
 
 #     cur.save()
 @frappe.whitelist()
-def get_distance_and_sort(docname):
+def sort_delivery_order(docname):
 
     to_sort = []
     cur = frappe.get_doc("Delivery Trip", docname)

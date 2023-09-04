@@ -23,11 +23,11 @@ import requests
 #         for d in doc.table:
 #             if d.distance == a:
 #                 d.idx = i
-@frappe.whitelist()
-    cur.save()
 
-    def get_distance_and_sort(docname):
-    
+#     cur.save()
+@frappe.whitelist()
+def get_distance_and_sort(docname):
+
     to_sort = []
     cur = frappe.get_doc("Delivery Trip", docname)
     for i in cur.table:

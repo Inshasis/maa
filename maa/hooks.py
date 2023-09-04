@@ -129,7 +129,10 @@ doc_events = {
     },
     "Customer": {
             "after_insert": "maa.maa.doctype.customer.after_insert"
-    }
+    },
+#     "Delivery Trip": {
+#         "on_submit": "maa.maa.api.get_distance_and_sort"
+#     }
 
 }
 

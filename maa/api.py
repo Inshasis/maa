@@ -11,7 +11,7 @@ def get_distance_and_sort(doc, method):
         url = "https://api.distancematrix.ai/maps/api/distancematrix/json?origins='" + latitude + "+" + longitude + "&destinations=" + a.latitude + "+" + a.longitude + "&mode=driving&departure_time=now&key=bUNDH50AQXySHRt6qzMdirw8a8rkl"
         response = frappe.frappe.make_get_request(url)
         resp = json.load(response)
-        a.distance = resp['rows']['0']['elements']['0']['distance']['text']
+        a.distance = float(resp['rows']['0']['elements']['0']['distance']['text'])
         a.estimated_delivery_time = resp['rows']['0']['elements']['0']['duration']['text']
         to_sort.append(a.distance)
         frappe.msgprint(a.estimated_delivery_time)

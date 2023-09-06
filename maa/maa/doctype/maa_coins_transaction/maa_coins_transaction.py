@@ -9,7 +9,7 @@ class MAACoinsTransaction(Document):
 
 	def after_insert(self):
 		if self.transaction_type == 'Credit':
-			coin_wallet = frappe.db.get_value('MAA Coins Wallet',{'name':self.coins_wallet},'coins')
+			coin_wallet = frappe.db.get_value('MAA Coins Wallet',{'customer':self.coins_wallet},'coins')
 			frappe.msgprint(str(coin_wallet))
 			sum_coin = int(coin_wallet) + int(self.transaction_coins) 
 			# Update Coins in MAA Coins coin_wallet

@@ -23,6 +23,8 @@
   "reference_doctype",
   "column_break_zythc",
   "reference_docname",
+  "coins_history_section",
+  "coins_transaction",
   "section_break_chybq",
   "remarks",
   "amended_from"
@@ -120,11 +122,22 @@
    "label": "Remarks"
   },
   {
+   "fieldname": "coins_history_section",
+   "fieldtype": "Section Break",
+   "label": "Coins History"
+  },
+  {
+   "fieldname": "coins_transaction",
+   "fieldtype": "Table",
+   "label": "Coins Transaction",
+   "options": "MAA Coins Transaction Child"
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Coins Transaction",
+   "options": "MAA Coins Transaction",
    "print_hide": 1,
    "read_only": 1
   }
@@ -132,7 +145,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-30 16:26:10.372954",
+ "modified": "2023-09-13 14:00:09.027306",
  "modified_by": "Administrator",
  "module": "Maa",
  "name": "MAA Coins Transaction",

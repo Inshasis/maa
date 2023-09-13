@@ -136,6 +136,15 @@ doc_events = {
 }
 
 
+scheduler_events = {
+    "cron": {
+        "0/2 * * * *": [
+            "maa.maa.doctype.maa_coins_transaction.maa_coins_transaction.check_expiry_date"
+        ]
+    }
+}
+
+
 # Scheduled Tasks
 # ---------------
 

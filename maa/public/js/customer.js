@@ -2,6 +2,22 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Customer', {
+    enter_referred_code: function(frm) {
+        if(frm.doc.enter_referred_code){
+         frappe.db.get_list('Customer',{ 
+         fields:['name'], 
+         filters:{ 
+             'referral_code':frm.doc.enter_referred_code 
+         } 
+         }).then(function(r){ 
+             console.log(r); 
+             if(r[0].name){
+                 cur_frm.set_value("referred_by",r[0].name);
+             }
+         });   
+             
+         }
+     },
     validate: function(frm) {
        if(!frm.doc.referral_code){
             var randomnum = Math.random().toString(36).substr(2,6).toUpperCase();
@@ -13,6 +29,9 @@ frappe.ui.form.on('Customer', {
         if(frm.doc.referral_code){
             frm.set_df_property('referral_code',"read_only",1);           
         }
+        if(frm.doc.enter_referred_code){
+	        frm.set_df_property('enter_referred_code',"read_only",1);           
+	    }
         
     },
     refresh: function(frm) {

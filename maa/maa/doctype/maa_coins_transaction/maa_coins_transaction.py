@@ -9,6 +9,11 @@ from frappe.utils import nowdate
 class MAACoinsTransaction(Document):
 	# pass
 
+	def before_insert(self):
+		if self.transaction_type == "Debit":
+			check = frappe.db.get_value("MAA Coins Wallet", {'name':self.coins_wallet}, 'coins')
+			if check <= 0:
+				frappe.throw("Coins not Enough for this transaction!")
 	def after_insert(self):
 		coin_wallet = frappe.db.get_value('MAA Coins Wallet',{'name':self.coins_wallet},'coins')
 		if self.transaction_type == 'Credit':
